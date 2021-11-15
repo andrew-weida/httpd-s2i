@@ -13,13 +13,14 @@ config_s2i
 if [ -d /tmp/src ]; then
   echo "---> Installing application source..."
   if [ "$(ls -A /tmp/src/*.html)" ]; then
-    cp -v /tmp/src/*.html ./
-    cp -v /tmp/src/*.html /var/www/
+    cp -Rfv /tmp/src/*.html ./
+    #cp -Rfv /tmp/src/*.html /var/www/html
+    echo "Hello World!" >> /var/www/html/index.html
   fi
 fi
 
 #echo "---> Installing application source"
-#cp -v /tmp/src/*.html ./
+#cp -Rfv /tmp/src/*.html ./
 
 DATE=`date "+%b %d, %Y @ %H:%M %p"`
 
