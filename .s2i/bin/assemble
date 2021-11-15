@@ -17,6 +17,8 @@ if [ -d /tmp/src ]; then
   fi
 fi
 
+sed -i 's|DocumentRoot "/opt/app-root/src"|DocumentRoot "/var/www"|g' ${HTTPD_CONFIGURATION_PATH}/httpd.conf
+
 #echo "---> Installing application source"
 #cp -v /tmp/src/*.html ./
 
