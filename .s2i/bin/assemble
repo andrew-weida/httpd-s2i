@@ -14,6 +14,7 @@ if [ -d /tmp/src ]; then
   echo "---> Installing application source..."
   if [ "$(ls -A /tmp/src/*.html)" ]; then
     cp -v /tmp/src/*.html ./
+    cp -v /tmp/src/*.html /var/www/
   fi
 fi
 
@@ -44,7 +45,7 @@ else
   fi
 fi
 
-sed -i 's|DocumentRoot "/opt/app-root/src"|DocumentRoot "/var/www"|g' ${HTTPD_CONFIGURATION_PATH}/httpd.conf
+#sed -i 's|DocumentRoot "/opt/app-root/src"|DocumentRoot "/var/www"|g' ${HTTPD_CONFIGURATION_PATH}/httpd.conf
 # Fix source directory permissions
 fix-permissions ./
 
