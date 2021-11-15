@@ -15,12 +15,10 @@ if [ -d /tmp/src ]; then
   if [ "$(ls -A /tmp/src/*.html)" ]; then
     cp -Rfv /tmp/src/*.html ./
     #cp -Rfv /tmp/src/*.html /var/www/html
-    echo "Hello World!" >> /var/www/html/index.html
   fi
 fi
 
-#echo "---> Installing application source"
-#cp -Rfv /tmp/src/*.html ./
+echo "Hello World!" >> /var/www/html/index.html
 
 DATE=`date "+%b %d, %Y @ %H:%M %p"`
 
