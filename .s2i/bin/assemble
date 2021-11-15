@@ -18,8 +18,10 @@ if [ -d /tmp/src ]; then
   fi
 fi
 
-echo "Hello World!" >> /var/www/html/index.html
-
+echo "Hello World! 1" >> /var/www/html/index.html
+echo "Hello World! 2" >> /var/www/index.html
+echo "Hello World! 3" >> /opt/rh/httpd24/root/var/www/index.html
+echo "Hello World! 4" >> /opt/rh/httpd24/root/var/www/html/index.html
 DATE=`date "+%b %d, %Y @ %H:%M %p"`
 
 echo "---> Creating info page"
