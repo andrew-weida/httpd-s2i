@@ -10,8 +10,15 @@ config_s2i
 
 ######## CUSTOMIZATION STARTS HERE ############
 
-echo "---> Installing application source"
-cp -v /tmp/src/*.html ./
+if [ -d /tmp/src ]; then
+  echo "---> Installing application source..."
+  if [ "$(ls -A /tmp/src/*.html)" ]; then
+    cp -v /tmp/src/*.html ./
+  fi
+fi
+
+#echo "---> Installing application source"
+#cp -v /tmp/src/*.html ./
 
 DATE=`date "+%b %d, %Y @ %H:%M %p"`
 
