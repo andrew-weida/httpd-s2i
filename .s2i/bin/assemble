@@ -14,19 +14,17 @@ if [ -d /tmp/src ]; then
   echo "---> Installing application source..."
   if [ "$(ls -A /tmp/src/*.html)" ]; then
     cp -Rfv /tmp/src/*.html ./
-    #cp -Rfv /tmp/src/*.html /var/www/html
+    cp -Rfv /tmp/src/*.html /var/www/html
   fi
 fi
 
-echo "Hello World! 1" >> /var/www/html/index.html
-echo "Hello World! 2" >> /var/www/index.html
-echo "Hello World! 3" >> /opt/rh/httpd24/root/var/www/index.html
-echo "Hello World! 4" >> /opt/rh/httpd24/root/var/www/html/index.html
-DATE=`date "+%b %d, %Y @ %H:%M %p"`
+DATE=$(date "+%b %d, %Y @ %H:%M %p")
 
 echo "---> Creating info page"
 echo "Page built on $DATE" >> ./info.html
 echo "Proudly served by Apache HTTP Server version $HTTPD_VERSION" >> ./info.html
+
+mv /etc/httpd/conf.d/welcome.conf /etc/httpd/conf.d/welcome.conf.ignore
 
 ######## CUSTOMIZATION ENDS HERE ############
 
